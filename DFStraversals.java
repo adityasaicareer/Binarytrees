@@ -70,14 +70,37 @@ public class DFStraversals
         if(root!=null)
         {
             inorder(root.left);
-            System.out.print(root.val);
+            System.out.print(root.val+" ");
             inorder(root.right);
         }
     }
 
-    public static void postorder(Node )
+    public static void postorder(Node root)
+    {
+        if(root!=null)
+        {
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.val+" ");
+        }
+    }
     public static void main(String args[])
     {
+        Binarytree b=new Binarytree();
+        b.add(5);
+        b.add(3);
+        b.add(8);
+        b.add(2);
+        b.add(4);
+        b.add(7);
+        b.add(6);
+
+        preorder(b.root);
+        System.out.println();
+        inorder(b.root);
+        System.out.println();
+        postorder(b.root);
+        System.out.println();
 
     }
 }
